@@ -70,7 +70,7 @@ fix         actforce all propel/self dipole ${f_mag}
 
 To run tutorial code: go to 'chiral/run_scripts'
 
-### NOTE: **Fix with `dipole` propel should be used in paralell with `fix brownian/sphere`. Check LAMMPS for more details.**
+### NOTE: **`fix tangential/propel` does not require dipole. Fix with `dipole` should be used in parallel with `fix brownian/sphere`. Check LAMMPS for more details.**
 ----
 
 ## HOOMD scripts
