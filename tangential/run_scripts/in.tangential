@@ -1,0 +1,74 @@
+# LAMMPS Input Script for Active Ring Polymer (LJ units)
+
+
+
+# =============== Initialization ===============
+units           lj                   # LJ reduced units
+atom_style      angle                # required for angle interactions
+dimension       3                    # 3D simulation
+boundary        f f f                # periodic boundary conditions
+neighbor        2.0 bin              # neighbor list cutoff
+neigh_modify    every 1 delay 5      # neighbor list update frequency
+
+# =============== Read Configuration ===============
+read_data       L512ring.data             
+                                     # Pre-built ring polymer data file
+                                     # (contains bonds/angles)
+
+# =============== Force Field Setup ===============
+# Pair potential (excluded for bonded atoms)
+pair_style lj/cut 1.122462           # LJ with cutoff
+pair_coeff 1 1 1.0 1.0 1.122462      # epsilon=1.0, sigma=1.0, cutoff=2.5
+pair_modify     shift yes            # Energy shift
+
+# Bond potential (keep polymer connected)
+bond_style fene
+bond_coeff 1 30. 1.05 1.0 1.0          # k=100, r0=1.0
+
+# Angle potential (maintain ring structure)
+angle_style harmonic
+angle_coeff 1 0 180.0               # k=0, theta0=180 degrees (linear)
+                                    # Here, I set k=0 to avoid any stiffness
+
+# Special bond to suppress warning
+special_bonds lj 0.0 1.0 1.0       # No 1-2, 1-3, 1-4 interactions
+
+# =============== Simulation Settings ===============
+# Minimize System
+velocity        all create 1.0 4928459                    
+fix             minimize all nve/limit 0.2
+fix             m2 all langevin 1.0 1.0 1 4928459
+                                 # T_start=${temp}, T_end=${temp}, damp=1, seed
+
+minimize 0.0 1e-10 1000 10000
+
+timestep 0.001         
+fix 1 all recenter 0    0   0
+run 20000
+
+unfix minimize
+unfix m2
+
+# Time integration
+fix             nve all nve           # Update positions/velocities
+
+# Active force tangential to ring (using our custom fix)
+fix             lang all langevin ${temp} ${temp} 1 4928459
+                                 # T_start=${temp}, T_end=${temp}, damp=1, seed
+fix             active all tangential/propel 1.0 1
+                                 # magnitude=1, angle_type=1
+
+timestep        0.01               # Reduced LJ time step
+thermo          1000                 # Output every 1000 steps
+compute         Rg all gyration
+compute         b_length all bond/local dist
+thermo_style    custom step press pe c_Rg
+
+# =============== Output ===============
+dump            bond_dump all local 100000 bond_lengths.txt c_b_length
+dump            traj all xyz 100000 test_traj.xyz
+
+# =============== Run ===============
+
+# minimize        1.0e-4 1.0e-6 1000 10000  # Energy minimization
+run             1000000000              # Run 100,000 steps (500 LJ time units)
