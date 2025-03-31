@@ -53,7 +53,7 @@ To run tutorial code: go to `tangential/run_scripts`.
 
 Use 
 ```
-fix         brownian all brownian/sphere ${temp} 4928459 gamma_t ${gamma_t} gamma_r ${gamma_r}
+fix         brownian all brownian/sphere ${temp} ${seed} gamma_t ${gamma_t} gamma_r ${gamma_r}
 fix         actforce all propel/self dipole ${f_mag}
 ```
 
