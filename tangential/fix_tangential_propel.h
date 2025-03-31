@@ -1,3 +1,11 @@
+/* ----------------------------------------------------------------------
+   Adapted from fix_propel_self.h. 
+   
+   This fix simulates tangentially-driven active polymers.
+   
+   Contributing author: Zhiyu Zhang (City University of Hong Kong)
+------------------------------------------------------------------------- */
+
 #ifdef FIX_CLASS
 
 FixStyle(tangential/propel, FixTangentialPropel)
