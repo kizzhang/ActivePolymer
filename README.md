@@ -22,3 +22,18 @@ Chirality can be introduced into active Brownian particles. See this inclusive [
 ## 2. HOOMD scripts
 
 
+## Citation
+You can cite this repository as 
+`Zhiyu Z., *Active polymer simulation*, GitHub repository 2025, [https://github.com/charlespwd/project-title](https://github.com/kizzhang/ActivePolymer)`
+```
+@misc{Zhiyu2025,
+  author = {Zhiyu, Z.},
+  title = {Active Polymer Simulation},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/kizzhang/ActivePolymer}},
+  commit = {main}
+}
+```
+
