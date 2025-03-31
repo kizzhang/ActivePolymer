@@ -25,7 +25,7 @@ As stated in the paper by Sevilla, the chirality is introduced by making the mea
 
 ## Usage 
 To compile the source codes, simply put the **.cpp file and its .h header file** into your `lammps/src` directory, and compile as detailed [here](https://docs.lammps.org/Build.html).
-
+---
 #### • Tangentially-driven active polymer 
 
 Use 
@@ -46,7 +46,7 @@ fix         langevin all langevin ${temp} ${temp} ${damp} ${seed}
 (Active force is defined with `atom->anglelist` in LAMMPS). 
 
 To run tutorial code: go to `tangential/run_scripts`.
-
+---
 #### • Achiral active Brownian polymer
 
 Use 
@@ -56,7 +56,7 @@ fix         actforce all propel/self dipole ${f_mag}
 ```
 
 To run tutorial code: go to 'achiral/'
-
+---
 #### • Chiral active Brownian polymer
 
 Use 
