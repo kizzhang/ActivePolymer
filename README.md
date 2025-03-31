@@ -14,7 +14,7 @@ Active Brownian particles can be chained together as a polymer. See image below.
 
 ![active Brownian Particle](https://github.com/user-attachments/assets/b4a1933e-60c6-443c-add8-8b685f8075b2)
 
-We can then run the simulation using fix/self/propel in LAMMPS. I will attach an **in.run** script for this later. Check my HOOMD-Blue code later.
+We can then run the simulation using `fix self/propel` in LAMMPS. I will attach an **in.run** script for this later. Check my HOOMD-Blue code later.
 
 #### • Chiral active Brownian polymer
 Chirality can be introduced into active Brownian particles. See this inclusive [paper](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.94.062120) by Sevilla. Chiral ABPs can also be chained to form a polymer. I will later upload LAMMPS source codes after benchmarking.
