@@ -24,7 +24,7 @@ Chirality can be introduced into active Brownian particles. See this inclusive [
 
 ## Citation
 You can cite this repository as 
-`Zhiyu Z., *Active polymer simulation*, GitHub repository 2025, [https://github.com/charlespwd/project-title](https://github.com/kizzhang/ActivePolymer)`
+`Zhiyu Z., *Active polymer simulation*, GitHub repository 2025, https://github.com/kizzhang/ActivePolymer`
 ```
 @misc{Zhiyu2025,
   author = {Zhiyu, Z.},
