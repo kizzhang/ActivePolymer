@@ -10,7 +10,13 @@
 
    See the README file in the top-level LAMMPS directory.
 ------------------------------------------------------------------------- */
-
+/* ----------------------------------------------------------------------
+   Adapted from fix_propel_self.cpp. 
+   
+   This fix simulates tangentially-driven active polymers.
+   
+   Contributing author: Zhiyu Zhang (City University of Hong Kong)
+------------------------------------------------------------------------- */
 #include "fix_tangential_propel.h"
 #include "atom.h"
 #include "neighbor.h"
