@@ -57,8 +57,6 @@ fix         actforce all propel/self dipole ${f_mag}
 
 To run tutorial code: go to 'achiral/'
 
-### NOTE: **Both fix should be used in paralell with `fix brownian/sphere`. Check LAMMPS for more details.**
-----
 #### • Chiral active Brownian polymer
 
 Use 
@@ -71,6 +69,9 @@ fix         actforce all propel/self dipole ${f_mag}
 `${tau_x,y,z}` is the torque magnitude along x,y,z axis. It also is the *mean* value for rotational Gaussian noise. You can use `plannar_rotation` flag to introduce chirality only in x-y plane.
 
 To run tutorial code: go to 'chiral/run_scripts'
+
+### NOTE: **Fix with `dipole` propel should be used in paralell with `fix brownian/sphere`. Check LAMMPS for more details.**
+----
 
 ## HOOMD scripts
 
