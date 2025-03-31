@@ -2,31 +2,31 @@
 <mark>**EMBRACE OPEN-ACCESS SCIENCE!**</mark>
 
 ##  LAMMPS Simulation
-#### * Tangentially-driven active polymer
+#### • Tangentially-driven active polymer
 Tangentially-driven by active force, active polymers are prone to [collapse](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.097801) in closed topology (unknotted ring).  
 
 ![image](https://github.com/user-attachments/assets/f9ae74b8-3651-4d3f-8814-2ec23f109fbb "Active force is along the tangent vector.")
 
 The code is modified from the fix_propel_self.cpp in [LAMMPS](https://github.com/lammps).
 
-#### * Achiral active Brownian polymer 
+#### • Achiral active Brownian polymer 
 Active Brownian particles can be chained together as a polymer. See image below.
 
 ![active Brownian Particle](https://github.com/user-attachments/assets/b4a1933e-60c6-443c-add8-8b685f8075b2)
 
 We can then run the simulation using fix/self/propel in LAMMPS. I will attach an **in.run** script for this later. Check my HOOMD-Blue code later.
 
-#### * Chiral active Brownian polymer
+#### • Chiral active Brownian polymer
 Chirality can be introduced into active Brownian particles. See this inclusive [paper](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.94.062120) by Sevilla. Chiral ABPs can also be chained to form a polymer. I will later upload LAMMPS source codes after benchmarking.
 
 ## Usage 
 To compile the source codes, simply put the **.cpp file and its .h header file** into your `lammps/src` directory, and compile as detailed [here](https://docs.lammps.org/Build.html).
 
-#### * Tangentially-driven active polymer 
+#### • Tangentially-driven active polymer 
 
 Use `fix 1 all tangential/propel ${mag} ${ang_tyle}`. (Active force is defined with `atom->anglelist` in LAMMPS)
 
-#### * Achiral active Brownian polymer
+#### • Achiral active Brownian polymer
 
 Use `fix brownian all chiral/brownian/sphere ${temp} ${ran_seed} chiral ${taux} ${tauy} ${tauz} ${mag} gamma_t ${gamma_t} gamma_r ${gamma_r}`
 
