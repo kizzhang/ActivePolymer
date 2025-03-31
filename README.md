@@ -37,12 +37,27 @@ To run tutorial code: go to `tangential/run_scripts`.
 #### • Achiral active Brownian polymer
 
 Use 
-
-`fix brownian all chiral/brownian/sphere ${temp} ${ran_seed} chiral ${taux} ${tauy} ${tauz} ${mag} gamma_t ${gamma_t} gamma_r ${gamma_r}`. 
+```
+fix         brownian all brownian/sphere ${temp} 4928459 gamma_t ${gamma_t} gamma_r ${gamma_r}
+fix         actforce all propel/self dipole ${f_mag}
+```
 
 To run tutorial code: go to 'achiral/'
 
 **Both fix should be used in paralell with `fix brownian/sphere`. Check LAMMPS for more details.**
+
+#### • Chiral active Brownian polymer
+
+Use 
+
+```
+fix         chiralBrown all chiral/brownian/sphere ${temp} 4928459 chiral ${tau_x} ${tau_y} ${tau_z} gamma_t ${gamma_t} gamma_r ${gamma_r}
+fix         actforce all propel/self dipole 1.0
+```
+
+`${tau_x,y,z}` is the torque magnitude along x,y,z axis. It also is the *mean* value for rotational Gaussian noise. You can use `plannar_rotation` flag to introduce chirality only in x-y plane.
+
+To run tutorial code: go to 'chiral/run_scripts'
 
 ## HOOMD scripts
 
