@@ -14,7 +14,7 @@ Active Brownian particles can be chained together as a polymer. See image below.
 
 ![active Brownian Particle](https://github.com/user-attachments/assets/b4a1933e-60c6-443c-add8-8b685f8075b2)
 
-We can then run the simulation using `fix self/propel` in LAMMPS. I will attach an **in.run** script for this later. Check my HOOMD-Blue code later.
+We can then run the simulation using `fix self/propel` in LAMMPS. I will post HOOMD-Blue code later.
 
 #### • Chiral active Brownian polymer
 Chirality can be introduced into active Brownian particles. See this inclusive [paper](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.94.062120) by Sevilla. Chiral ABPs can also be chained to form a polymer. I will later upload LAMMPS source codes after benchmarking.
@@ -24,11 +24,11 @@ To compile the source codes, simply put the **.cpp file and its .h header file**
 
 #### • Tangentially-driven active polymer 
 
-Use `fix 1 all tangential/propel ${mag} ${ang_tyle}`. (Active force is defined with `atom->anglelist` in LAMMPS)
+Use `fix 1 all tangential/propel ${mag} ${ang_tyle}` (Active force is defined with `atom->anglelist` in LAMMPS). To run tutorial code: go to `tangential/run_scripts`.
 
 #### • Achiral active Brownian polymer
 
-Use `fix brownian all chiral/brownian/sphere ${temp} ${ran_seed} chiral ${taux} ${tauy} ${tauz} ${mag} gamma_t ${gamma_t} gamma_r ${gamma_r}`
+Use `fix brownian all chiral/brownian/sphere ${temp} ${ran_seed} chiral ${taux} ${tauy} ${tauz} ${mag} gamma_t ${gamma_t} gamma_r ${gamma_r}`. To run tutorial code: go to 'achiral/'
 
 **Both fix should be used in paralell with `fix brownian/sphere`. Check LAMMPS for more details.**
 
