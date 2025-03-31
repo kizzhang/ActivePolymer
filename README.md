@@ -24,11 +24,19 @@ To compile the source codes, simply put the **.cpp file and its .h header file**
 
 #### • Tangentially-driven active polymer 
 
-Use `fix 1 all tangential/propel ${mag} ${ang_tyle}` (Active force is defined with `atom->anglelist` in LAMMPS). To run tutorial code: go to `tangential/run_scripts`.
+Use 
+
+`fix 1 all tangential/propel ${mag} ${ang_tyle}` (Active force is defined with `atom->anglelist` in LAMMPS). 
+
+To run tutorial code: go to `tangential/run_scripts`.
 
 #### • Achiral active Brownian polymer
 
-Use `fix brownian all chiral/brownian/sphere ${temp} ${ran_seed} chiral ${taux} ${tauy} ${tauz} ${mag} gamma_t ${gamma_t} gamma_r ${gamma_r}`. To run tutorial code: go to 'achiral/'
+Use 
+
+`fix brownian all chiral/brownian/sphere ${temp} ${ran_seed} chiral ${taux} ${tauy} ${tauz} ${mag} gamma_t ${gamma_t} gamma_r ${gamma_r}`. 
+
+To run tutorial code: go to 'achiral/'
 
 **Both fix should be used in paralell with `fix brownian/sphere`. Check LAMMPS for more details.**
 
