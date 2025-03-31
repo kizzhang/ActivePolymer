@@ -78,7 +78,7 @@ To run tutorial code: go to 'chiral/run_scripts'
 
 ## Citation
 You can cite this repository as 
-`Zhiyu Z., *Active polymer simulation*, GitHub repository 2025, https://github.com/kizzhang/ActivePolymer`
+`Zhiyu Z., Active polymer simulation, GitHub repository 2025, https://github.com/kizzhang/ActivePolymer`
 ```
 @misc{Zhiyu2025,
   author = {Zhiyu, Z.},
